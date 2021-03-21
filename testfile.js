@@ -44,12 +44,55 @@ function runPrompt () {
             type:"input",
             name: "email",
             message: "enter email",
+        },
+        {
+            type:"input",
+            name: "githubusername",
+            message: "enter github username",
         }
         
     ])
     .then(function (response){
         console.log(response);
+        let fileData = `
+# Project: ${response.title}
+### Author name: ${response.namedeveloper}
+
+## Table of Contents: 
+* [Description](#Description)
+* [Github Profile](#Github)
+* [Installation](#Installation)
+* [Usage](#usage)
+* [License](#license)
+* [Testing](#testing)
+* [Questions](#questions)
+
+# Description
+${response.description}
+
+#GitHub
+[Github Profile](https://github.com/${response.githubusername})
+
+# Installation
+${response.installation}
+
+# Usage
+${response.usage}
+
+# License
+![GitHub license](https://img.shields.io/badge/license-${response.forlicense}-blue.svg)
+
+# Testing
+${response.testing}
+
+# Email
+Feel free to reach me at ${response.email}
+
+   `
+
+   console.log(fileData)
     })
 }
+
 
 runPrompt()
