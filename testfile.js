@@ -7,7 +7,7 @@ function runPrompt () {
         {
             type:"input",
             name: "namedeveloper",
-            message: "enter projectname",
+            message: "enter authorname",
         },
         {
             type:"input",
