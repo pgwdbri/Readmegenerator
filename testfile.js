@@ -91,6 +91,10 @@ Feel free to reach me at ${response.email}
    `
 
    console.log(fileData)
+   fs.writeFileSync("README.MD",fileData,function(error,data){
+       if (error)throw error
+       console.log(data)
+   })
     })
 }
 
